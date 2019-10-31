@@ -1,42 +1,43 @@
-DROP SCHEME IF EXISTS training;
+DROP SCHEMA IF EXISTS training;
 CREATE SCHEMA training;
 USE training;
-SET AUTO_COMMIT=0;
 
-DROP TABLE IF EXISTS 'employee';
+DROP TABLE IF EXISTS employee;
 
-CREATE TABLE 'employee'(
-'ID' INT(4) NOT NULL AUTO_INCREMENT,
-'firstName' CHAR(30) NOT NULL,
-'lastName' CHAR(30) NOT NULL,
-'email' CHAR (50) NOT NULL,
-'managerEmail' CHAR(50) NOT NULL,
-PRIMARY KEY ('ID'),
-CONSTRAINT 'empFK1' FOREIGN KEY ('ID') REFERENCES 'courseEmployee'('employeeID')
+CREATE TABLE employee(
+ID INT(4) NOT NULL AUTO_INCREMENT,
+firstName VARCHAR(30) NOT NULL,
+lastName VARCHAR(30) NOT NULL,
+email VARCHAR (50) NOT NULL,
+managerEmail VARCHAR(50) NOT NULL,
+PRIMARY KEY (ID)
 );
 
-DROP TABLE IF EXISTS 'course';
+DROP TABLE IF EXISTS course;
 
-CREATE TABLE 'course'(
-'courseID' INT(4) NOT NULL AUTO_INCREMENT,
-'courseName' CHAR(100) NOT NULL,
-'date' DATE() NOT NULL,
-'location' CHAR(50) NOT NULL ,
-'description' CHAR(300) NOT NULL,
-'courseTrainer' CHAR(100) NOT NULL,
-'info' CHAR (200) NOT NULL,
-PRIMARY KEY ('courseID'),
-CONSTRAINT 'courseFK1' FOREIGN KEY ('courseID') REFERENCES 'courseEmployee'('courseID')
+CREATE TABLE course(
+courseID INT(4) NOT NULL AUTO_INCREMENT,
+courseName VARCHAR(100) NOT NULL,
+date DATE NOT NULL,
+location VARCHAR(50) NOT NULL,
+description VARCHAR(255) NOT NULL,
+courseTrainer VARCHAR(100) NOT NULL,
+info VARCHAR (200) NOT NULL,
+PRIMARY KEY (courseID)
 );
 
-DROP TABLE IF EXISTS 'courseEmployee';
+DROP TABLE IF EXISTS courseEmployee;
 
-CREATE TABLE 'courseEmployee'(
-'courseID' int(4) NOT NULL,
-'employeeID' int(4) NOT NULL,
-'isWaiting' BIT NOT NULL DEFAULT '0',
-'isAttend' BIT NOT NULL DEFAULT '0',
-PRIMARY KEY ('courseID','employeeID'),
-CONSTRAINT 'courseEmployeeFK1' FOREIGN KEY ('courseID') REFERENCES 'course'('courseID'),
-CONSTRAINT 'courseEmployeeFK2' FOREIGN KEY ('employeeID') REFERENCES 'employee'('ID')
+CREATE TABLE courseEmployee(
+courseID int(4) NOT NULL,
+employeeID int(4) NOT NULL,
+isWaiting BIT NOT NULL DEFAULT 0,
+isAttend BIT NOT NULL DEFAULT 0,
+CONSTRAINT PK_CourseEmployee PRIMARY KEY (courseID, employeeID)
 );
+
+ALTER TABLE courseEmployee
+ADD FOREIGN KEY (employeeID) REFERENCES employee(ID);
+
+ALTER TABLE courseEmployee
+ADD FOREIGN KEY (courseID) REFERENCES course(courseID);
