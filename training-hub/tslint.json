@@ -12,13 +12,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "training",
+      "trainingHub",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "training",
+      "training-hub",
       "kebab-case"
     ],
     "import-blacklist": [
