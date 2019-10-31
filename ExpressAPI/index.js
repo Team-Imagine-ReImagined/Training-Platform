@@ -1,11 +1,32 @@
 const express = require('express');
 const app = express();
+const db = require('/db.js');
+app.use(express.json());
 
-app.get('/', function (req,res){
-    res.send('<h1> working </h1>')
-    console.log('Working');
+function updateCourses(coursesReadyFn){
+    db.getCourses( function(rows){
+        courses = rows;
+        coursesReadyFn();
+    })
+}
+
+app.get('/getcourses', function (req,res){
+    updateCourses(function(){
+        res.send(courses);
+    });
 });
+
+app.post('/addcourse', function(req,res){
+    db.addCourse(req.body, function(insertedKey){
+        updateCourses(function(){
+            res.send(courses)
+        })
+    })
+})
 
 app.listen(8002, function(){
     console.log('Express started on port 8002');
-})
+});
+
+courses = []
+
