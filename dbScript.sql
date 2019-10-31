@@ -1,0 +1,43 @@
+DROP SCHEMA IF EXISTS training;
+CREATE SCHEMA training;
+USE training;
+
+DROP TABLE IF EXISTS employee;
+
+CREATE TABLE employee(
+ID INT(4) NOT NULL AUTO_INCREMENT,
+firstName VARCHAR(30) NOT NULL,
+lastName VARCHAR(30) NOT NULL,
+email VARCHAR (50) NOT NULL,
+managerEmail VARCHAR(50) NOT NULL,
+PRIMARY KEY (ID)
+);
+
+DROP TABLE IF EXISTS course;
+
+CREATE TABLE course(
+courseID INT(4) NOT NULL AUTO_INCREMENT,
+courseName VARCHAR(100) NOT NULL,
+date DATE NOT NULL,
+location VARCHAR(50) NOT NULL,
+description VARCHAR(255) NOT NULL,
+courseTrainer VARCHAR(100) NOT NULL,
+info VARCHAR (200) NOT NULL,
+PRIMARY KEY (courseID)
+);
+
+DROP TABLE IF EXISTS courseEmployee;
+
+CREATE TABLE courseEmployee(
+courseID int(4) NOT NULL,
+employeeID int(4) NOT NULL,
+isWaiting BIT NOT NULL DEFAULT 0,
+isAttend BIT NOT NULL DEFAULT 0,
+CONSTRAINT PK_CourseEmployee PRIMARY KEY (courseID, employeeID)
+);
+
+ALTER TABLE courseEmployee
+ADD FOREIGN KEY (employeeID) REFERENCES employee(ID);
+
+ALTER TABLE courseEmployee
+ADD FOREIGN KEY (courseID) REFERENCES course(courseID);
