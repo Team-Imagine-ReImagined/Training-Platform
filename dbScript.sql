@@ -23,6 +23,7 @@ location VARCHAR(50) NOT NULL,
 description VARCHAR(255) NOT NULL,
 courseTrainer VARCHAR(100) NOT NULL,
 info VARCHAR (200) NOT NULL,
+maxAttendees INT(3) NOT NULL,
 PRIMARY KEY (courseID)
 );
 
@@ -60,14 +61,14 @@ values ('Conor', 'Moss', 'c.moss@kainos.com', 't.boyle@kainos.com');
 insert into employee (firstName, lastName, email, managerEmail)
 values ('Ryan', 'Connolly', 'r.connolly@kainos.com', 't.boyle@kainos.com');
 
-insert into course (courseName, courseDate, location, description, courseTrainer, info)
-values ('EAYL Induction', date'2019-12-14', 'Park Inn', 'Getting new EAYLs up to speed with company processes and basic programing languages.', 'Shaun Ganley', 'Suitable for those who have recently joined Kainos as EAYL');
-insert into course (courseName, courseDate, location, description, courseTrainer, info)
-values ('Trainee Development Programme', date'2019-11-03', 'Mount Charles', 'Getting placements and graduates up to speed with company processes and basic programing languages.', 'Roisin Goodman', 'Suitable for those who have recently joined Kainos as a graduate or placement student.');
-insert into course (courseName, courseDate, location, description, courseTrainer, info)
-values ('New Manager Crash Course', date'2020-03-23', 'Ascot', 'Teaching hopeful managers how to rule over their subordinates', 'Brendan Mooney', 'Suitable for those who want to earn more of that sweet dolla.');
-insert into course (courseName, courseDate, location, description, courseTrainer, info)
-values ('Taking It Easy', date'2020-06-27', 'Upper Crescent', 'Helping you rest and relax in the workplace', 'Ryan Connolly', 'Suitable for those who want People Support to start secretly investigating them.');
+insert into course (courseName, courseDate, location, description, courseTrainer, info, maxAttendees)
+values ('EAYL Induction', date'2019-12-14', 'Park Inn', 'Getting new EAYLs up to speed with company processes and basic programing languages.', 'Shaun Ganley', 'Suitable for those who have recently joined Kainos as EAYL', 10);
+insert into course (courseName, courseDate, location, description, courseTrainer, info, maxAttendees)
+values ('Trainee Development Programme', date'2019-11-03', 'Mount Charles', 'Getting placements and graduates up to speed with company processes and basic programing languages.', 'Roisin Goodman', 'Suitable for those who have recently joined Kainos as a graduate or placement student.', 15);
+insert into course (courseName, courseDate, location, description, courseTrainer, info, maxAttendees)
+values ('New Manager Crash Course', date'2020-03-23', 'Ascot', 'Teaching hopeful managers how to rule over their subordinates', 'Brendan Mooney', 'Suitable for those who want to earn more of that sweet dolla.', 20);
+insert into course (courseName, courseDate, location, description, courseTrainer, info, maxAttendees)
+values ('Taking It Easy', date'2020-06-27', 'Upper Crescent', 'Helping you rest and relax in the workplace', 'Ryan Connolly', 'Suitable for those who want People Support to start secretly investigating them.', 25);
 
 insert into courseEmployee(courseID, employeeID)
 values (1, 1);
