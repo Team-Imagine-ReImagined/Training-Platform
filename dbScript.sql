@@ -68,6 +68,8 @@ insert into course (courseName, courseDate, location, description, courseTrainer
 values ('New Manager Crash Course', date'2020-03-23', 'Ascot', 'Teaching hopeful managers how to rule over their subordinates', 'Brendan Mooney', 'Suitable for those who want to earn more of that sweet dolla.');
 insert into course (courseName, courseDate, location, description, courseTrainer, info)
 values ('Taking It Easy', date'2020-06-27', 'Upper Crescent', 'Helping you rest and relax in the workplace', 'Ryan Connolly', 'Suitable for those who want People Support to start secretly investigating them.');
+insert into course (courseName, courseDate, location, description, courseTrainer, info)
+values ('Graduate Induction', date'2019-12-14', 'Park Inn', 'Getting new grads up to speed with company processes and basic programing languages.', 'Matthew OReilly', 'Suitable for those who have recently joined Kainos as graduates');
 
 insert into courseEmployee(courseID, employeeID)
 values (1, 1);
