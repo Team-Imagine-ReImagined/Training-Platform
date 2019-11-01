@@ -23,3 +23,16 @@ exports.getCourses = function(callback) {
         }
     )
 }
+
+exports.getCourseDetails = function(courseId, callback) {
+    db.query(
+        "SELECT * FROM course WHERE courseID = ?",
+        [courseId],
+        function(err, rows) {
+            if (err) {
+                throw err;
+            }
+            callback(rows);
+        }
+    )
+}

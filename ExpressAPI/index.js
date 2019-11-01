@@ -15,6 +15,12 @@ app.get('/courses', function(req, res) {
     })
 });
 
+app.get('/courseDetails', function(req, res) {
+    db.getCourseDetails(req.query.id, function(rows) {
+        res.send(rows);
+    })
+})
+
 app.listen(8002, function(){
     console.log('Express started on port 8002');
 });
