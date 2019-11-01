@@ -13,7 +13,7 @@ db.connect(function(err){
 });
 
 exports.addCourse = function(data, readyFn){
-    db.query('INSERT INTO course ?', data,
+    db.query("INSERT INTO course SET ?", data,
     function(error, results, fields){
         if(error) throw error;
         readyFn(results.insertId);
