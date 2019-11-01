@@ -14,7 +14,7 @@ import { CourseListComponent } from './course-list/course-list.component'
   imports: [
     NgbModule,
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule
     
   ],
   providers: [],
