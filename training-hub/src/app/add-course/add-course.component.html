@@ -1,0 +1,12 @@
+<form (ngSubmit)="addCourse(addForm)" #addForm="ngForm">
+    <fieldset>
+        <legend>Add course</legend>
+        <div><input [(ngModel)]="newCourse.courseName" name="courseName" placeholder="Course name"></div>
+        <div><input [(ngModel)]="newCourse.courseDate" name="courseDate" type="Date" placeholder="Course date"></div>
+        <div><input [(ngModel)]="newCourse.location" name="location" placeholder="Location"></div>
+        <div><input [(ngModel)]="newCourse.description" name="description" placeholder="Description"></div>
+        <div><input [(ngModel)]="newCourse.courseTrainer" name="courseTrainer" placeholder="Course trainer"></div>
+        <div><input [(ngModel)]="newCourse.info" name="info" placeholder="Info"></div>
+        <input type="submit">
+    </fieldset>
+</form>
