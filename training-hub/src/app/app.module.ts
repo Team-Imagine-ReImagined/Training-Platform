@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { HttpClientModule } from '@angular/common/http'
 
-import { AppComponent } from './app.component';
-import { CourseListComponent } from './course-list/course-list.component';
+import { AppComponent } from './app.component'
+import { CourseListComponent } from './course-list/course-list.component'
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { CourseListComponent } from './course-list/course-list.component';
     CourseListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
