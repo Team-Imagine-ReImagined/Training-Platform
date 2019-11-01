@@ -1,4 +1,34 @@
-<p>course-list works!</p>
-<ul>
-    <li *ngFor="let course of data.courses|async">{{ city.name }}</li>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    
+  </head>
+  <body>
+
+            <div>
+                <table id="courseTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th data-date-format="ddmmyyyy">Date</th>
+                            <th>Location</th> 
+                            <th>Description</th>
+                            <th>Trainer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="myRow" id="pop-over" *ngFor="let course of data.courses | async">
+                            <td>{{ course.courseName}}</td>
+                            <td>{{ course.courseDate}}</td>
+                            <td>{{ course.location}}</td>
+                            <td>{{ course.description}}</td>
+                            <td>{{ course.courseTrainer}}</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+</body>
+</html>
