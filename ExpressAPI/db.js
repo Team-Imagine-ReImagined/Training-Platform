@@ -14,7 +14,7 @@ db.connect(function(err){
 
 exports.getCourses = function(callback) {
     db.query(
-        "SELECT * FROM course;",
+        "SELECT * FROM course ORDER BY courseName ASC, CAST(courseDate as DATETIME) DESC;",
         function(err, rows) {
             if (err) {
                 throw err;
