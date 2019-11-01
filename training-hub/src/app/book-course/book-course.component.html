@@ -1,1 +1,20 @@
-<p>book-course works!</p>
+<form (ngSubmit)="addCity()">
+  <fieldset>
+    <legend>Add Course</legend>
+    <div><input [(ngModel)]="newCourse.courseName" name="courseName" placeholder="Name"></div>
+    <div><input [(ngModel)]="newCourse.courseDate" type="date" name="courseDate" placeholder="Date"></div>
+    <div><select [(ngModel)]="newCourse.location" name="location" placeholder="Location">
+      <option value="Belfast">Belfast</option>
+      <option value="Derry">Derry</option>
+      <option value="Dublin">Dublin</option>
+      <option value="London">London</option>
+      <option value="Gdansk">Gdansk</option>
+      <option value="Amsterdam">Amsterdam</option>
+      <option value="Boston">Boston</option>
+      <option value="Frankfurt">Frankfurt</option>
+    </select></div>
+    <div><input [(ngModel)]="newCourse.description" name="description" placeholder="Description"></div>
+    <div><input [(ngModel)]="newCourse.courseTrainer" name="courseTrainer" placeholder="Trainer"></div>
+    <div><input [(ngModel)]="newCourse.info" name="info" placeholder="Info"></div>
+  </fieldset>
+</form>
