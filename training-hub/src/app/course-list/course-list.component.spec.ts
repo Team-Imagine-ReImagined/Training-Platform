@@ -22,4 +22,8 @@ describe('CourseListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy()
   })
+
+  it('should be able to fetch courses', () => {
+    expect(component.data.courses).not.toEqual(null)
+  })
 })
