@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
-
-    </head>
     <body>
-        <div>
-            <table id="courseTable" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th data-date-format="ddmmyyyy">Date</th>
-                        <th>Location</th>
-                        <th>Description</th>
-                        <th>Trainer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="myRow" id="pop-over" *ngFor="let course of data.courses | async">
-                        <td><a [attr.href]="'http://localhost:8000/api/courseDetails?id=' + course.courseID">{{ course.courseName }}</a></td>
-                        <td>{{ course.courseDate }}</td>
-                        <td>{{ course.location }}</td>
-                        <td>{{ course.description }}</td>
-                        <td>{{ course.courseTrainer }}</td>
-                        </tr>
-                </tbody>
-            </table>
-        </div>
+        <ngb-tabset>
+            <ngb-tab title="Courses" id="tab1">
+                <ng-template ngTabContent>
+                    <div>
+                        <table id="courseTable" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th data-date-format="ddmmyyyy">Date</th>
+                                    <th>Location</th>
+                                    <th>Description</th>
+                                    <th>Trainer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="myRow" id="pop-over" *ngFor="let course of data.courses | async">
+                                    <td><a [attr.href]="'http://localhost:8000/api/courseDetails?id=' + course.courseID">{{ course.courseName }}</a></td>
+                                    <td>{{ course.courseDate }}</td>
+                                    <td>{{ course.location }}</td>
+                                    <td>{{ course.description }}</td>
+                                    <td>{{ course.courseTrainer }}</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Add Course" id="tab2">
+            </ngb-tab>
+        </ngb-tabset>
     </body>
 </html>
