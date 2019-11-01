@@ -31,11 +31,11 @@ app.listen(8002, function(){
 courses = []
 
 app.put('/editcourse', function(req,res){
-    db.editCourse(req.body),function(){
+    db.editCourse(req.body,function(){
         updateCourses(function(){
             res.send(courses)
         })
-    }
+    });
 });
 
 courses = [];
