@@ -1,1 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+    padding-left: 10%;
+    padding-left: 10%;
+    width: 80%;
+    background-color: #ffffff;
+}
+
+.block{
+    height: 20px;
+    background-color: #61ab3f;
+}
+
+.title{
+    color: #283583;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    float: right;
+    padding-top: 2%;
+    padding-right: 1%;
+}
+/* img {
+    opacity: 0.7;
+    filter: alpha(opacity=30);
+    width: 40%;
+    height: 60%;
+    padding: 5%;
+    position: relative;
+    display: inline-block; 
+} */
+
+.box-half{
+    width: 50%;
+    position: relative;
+    display: inline-block; 
+}
+.box-half{
+    width: 50%;
+    position: relative;
+    display: inline-block; 
+}
+
+.box-half :hover{
+transform: scale(1.1);
+}
+
+.box-full{
+    width: 100%;
+    position: relative;
+    display: inline-block; 
+}
+
+.box-full :hover{
+    transform: scale(1.1);
+    }
+
+.box-half .text{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;        
+    text-align: center;
+    top: 40%; 
+    background: transparent;
+    font-family: "Roboto";
+    color: #283583;
+    width:100%; 
+    font-size: 300%;
+    font-weight: bold;
+}
+
+.box-full .text{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;        
+    text-align: center;
+    top: 40%; 
+    background: transparent;
+    font-family: "Roboto";
+    color: #283583;
+    width:50%; 
+    font-size: 300%;
+    font-weight: bold;
+}
+/* .text {
+    -webkit-animation: color_change 1s infinite alternate;
+    -moz-animation: color_change 1s infinite alternate;
+    -ms-animation: color_change 1s infinite alternate;
+    -o-animation: color_change 1s infinite alternate;
+    animation: color_change 1s infinite alternate;
+   }
+   
+   @-webkit-keyframes color_change {
+    from { color: #283583; }
+    to { color: #94a4ff;; }
+   }
+   @-moz-keyframes color_change {
+    from { color: #283583; }
+    to { color: #94a4ff;; }
+   }
+   @-ms-keyframes color_change {
+    from { color: #283583; }
+    to { color: #94a4ff;; }
+   }
+   @-o-keyframes color_change {
+    from { color: #283583; }
+    to { color: #94a4ff;; }
+   }
+   @keyframes color_change {
+    from { color: #283583; }
+    to { color: #94a4ff;; }
+   } */
